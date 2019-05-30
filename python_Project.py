@@ -1,5 +1,3 @@
-# from __future__ import print_function  # accomodate Python 2
-# from colors import color
 
 class Board:
 
@@ -103,11 +101,6 @@ class Board:
 
 		# Right Border
 		for row in range(10):
-			# if row == 0:
-			# 	self.boardVisual[row][9] = "***"
-			# elif row == 9:
-			# 	self.boardVisual[row][9] = "***"
-			
 			self.boardVisual[row][9] = "*"
 
  ############################################################################################
@@ -132,34 +125,6 @@ class Board:
 					print(cyan.format(self.boardVisual[row][col])),
 				else:
 					print(self.boardVisual[row][col]),
-
-
-		# for row in range(10):
-		# 	for col in range(10):
-		# 		if (col == 9):
-		# 			if self.boardVisual[row][col] == " ~ ":
-		# 				print(cyan.format(self.boardVisual[row][col])),
-		# 			#elif self.boardVisual[row][col] != " ~ " and self.boardVisual[row][col] != " # " and self.boardVisual[row][col] != " O ":
-		# 				#print(cyan.format(self.boardVisual[row][col]))
-				
-		# 		elif self.boardVisual[row][col] == " ~ ":
-		# 			print(cyan.format(self.boardVisual[row][col])),
-				
-		# 		#elif self.boardVisual[row][col] != " ~ " and self.boardVisual[row][col] != " # " and self.boardVisual[row][col] != " O ":
-		# 			#print(self.boardVisual[row][col]),
-		
-
-
-
-
-
-		# for row in range(10):
-		# 	for col in range(10):
-		# 		if (col == 9):
-		# 			print(self.boardVisual[row][col])
-		# 		else:
-		# 			print(self.boardVisual[row][col]),
-
 
  ############################################################################################
 
@@ -368,19 +333,6 @@ class Board:
 				print("Error: Can't split ship") 
 
 
-
-
-			# if self.lastInputedRow + 1 != row and self.lastInputedRow - 1 != row and self.lastInputedRow != row:
-			# 	correctRow = False
-
-			# if self.lastInputedCol + 1 != col and self.lastInputedCol - 1 != col and self.lastInputedCol != col:
-			# 	correctCol = False
-
-			# if (not correctRow or not correctCol) and self.boardPlayer[row][col] != 3:
-			# 	print("Can't split ship")
-
-
-
 		if correctRow and correctCol:
 			self.firstShipSlot = False
 
@@ -584,9 +536,7 @@ class Board:
 
  	def placeBots5SlottedShip(self):
  		import random
-
-		#Don't forget to add the boardShoot[row][col] + and - != 3 
-
+		
 		row = random.randint(0,7)
 		col = random.randint(0,7)
 
@@ -708,9 +658,7 @@ class Board:
 
  	def placeBots4SlottedShip(self):
  		import random
-
-		#Don't forget to add the boardShoot[row][col] + and - != 3 
-
+		
 		row = random.randint(0,7)
 		col = random.randint(0,7)
 
@@ -791,9 +739,7 @@ class Board:
 
 	def placeBots3SlottedShip(self):
 		import random
-
-		#Don't forget to add the boardShoot[row][col] + and - != 3 
-
+		
 		row = random.randint(0,7)
 		col = random.randint(0,7)
 
@@ -1032,16 +978,6 @@ class Board:
 						print(red.format("Player Destoryed Bot's 3 Slotted Ship!"))
 					break
 
-			
-
-		# for row in range(8):
-		# 	for col in range(8):
-		# 		if self.boardShoot[row][col] == 2:
-
-		# 		elif self.boardShoot[row][col] == 1:
-		# 			self.boardVisual[row + 1][col + 1] = blink.format(red.format(" X ")) 
-
-
  ############################################################################################
 
  	def botShoots(self):
@@ -1150,11 +1086,6 @@ class Board:
  						break
 
 
-
-
-
-
-
  ############################################################################################
 
 
@@ -1200,10 +1131,7 @@ print(green.format("5 Slot - Green Ship"))
 print(yellow.format("4 Slot - Blue Ship"))
 print(magenta.format("3 Slot - Magenta Ship \n"))
 
-
-#print("ShootBoard")
 playerBoardShoot.placeBotsShips()
-#playerBoardShoot.printBoard()
 
 print("\nPlayerBoard")
 playerBoardVisual.printBoard()
@@ -1281,7 +1209,6 @@ while not gameEnd:
 	time.sleep(5)
 	playerBoardShoot.stopBlinkingEverything()
 
-	#print(gray.format("\n\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n"))
 	playerBoardVisual.botShoots() 	# Bot Shooting
 
 	print(gray.format("\nShootBoard"))
